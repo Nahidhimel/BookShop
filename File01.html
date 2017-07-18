@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+	<meta charset="utf-8">
+	<title>The Online Shop for Books</title>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script>
+	<script src="app.js"></script>
+</head>
+<body>
+	<div id="headerWrapper" ng-Controller = "HeaderCtrl">
+		<span class="logo pull-left">{{appDetails.title}}</span>
+		<span class="tagline pull-left">{{appDetails.tagline}}</span>
+		<div class="nav-wrapper pull-right">
+			<ul class="nav nav-pills">
+				<li ng-Class="{active: nav.isActive('/books')}"><a href="#/books"> Book</a></li>
+				<li ng-Class="{active: nav.isActive('/cart')}"><a href="#/cart">Cart</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div ng-view class="container"></div>
+</body>
+</html>
